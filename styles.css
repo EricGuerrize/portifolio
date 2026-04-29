@@ -187,16 +187,24 @@ body.cursor-hover .cursor-ring {
   left: 1rem;
   right: 1rem;
   z-index: 9;
-  display: none;
+  display: flex;
   flex-direction: column;
   padding: 0.75rem;
   border: 1px solid var(--line);
   border-radius: 1.2rem;
   background: rgba(9, 11, 10, 0.95);
   backdrop-filter: blur(20px);
+  transform: translateY(-10px);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.4s var(--ease-out), opacity 0.3s ease;
 }
 
-.mobile-nav.open { display: flex; }
+.mobile-nav.open { 
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
 
 /* ─── HERO ───────────────────────────────── */
 .hero {
@@ -206,7 +214,7 @@ body.cursor-hover .cursor-ring {
   display: flex;
   flex-direction: column;
   scroll-snap-align: start;
-  scroll-snap-stop: always;
+  scroll-snap-stop: normal;
 }
 
 .hero-bg {
@@ -284,8 +292,8 @@ body.cursor-hover .cursor-ring {
 .hero-title {
   margin: 0;
   font-family: "Archivo Black", sans-serif;
-  font-size: clamp(2rem, 5.5vw, 6rem);
-  line-height: 0.9;
+  font-size: clamp(2.5rem, 6.5vw, 6rem);
+  line-height: 0.95;
   letter-spacing: -0.01em;
   text-transform: uppercase;
 }
@@ -402,6 +410,10 @@ body.cursor-hover .cursor-ring {
   margin-top: auto;
 }
 
+.section .ticker {
+  display: none;
+}
+
 .ticker-track {
   display: flex;
   align-items: center;
@@ -441,7 +453,7 @@ body.cursor-hover .cursor-ring {
   flex-direction: column;
   justify-content: center;
   scroll-snap-align: start;
-  scroll-snap-stop: always;
+  scroll-snap-stop: normal;
 }
 
 .section-kicker {
@@ -669,9 +681,14 @@ body.cursor-hover .cursor-ring {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  gap: 1rem;
+  gap: 0.5rem;
   padding: 2.5rem 0;
   border-bottom: 1px solid var(--line);
+  transition: background 0.3s ease;
+}
+
+.skill-row:hover {
+  background: rgba(215, 255, 56, 0.02);
 }
 
 .skill-row span {
