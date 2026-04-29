@@ -50,7 +50,7 @@
 
         <div class="hero-layout">
           <div class="hero-top">
-            <p class="eyebrow hero-eyebrow">Desenvolvedor web</p>
+            <p class="eyebrow hero-eyebrow">Programador</p>
             <div class="hero-right">
               <div class="avail-badge">
                 <span class="badge-dot"></span>
@@ -75,11 +75,11 @@
             </div>
             <div class="hero-numbers">
               <div class="hero-num">
-                <strong data-counter="15">0</strong>
+                <strong data-counter="30" data-prefix="+">0</strong>
                 <span>projetos entregues</span>
               </div>
               <div class="hero-num">
-                <strong data-counter="3">0</strong>
+                <strong data-counter="4" data-prefix="+">0</strong>
                 <span>anos de experiência</span>
               </div>
             </div>
@@ -120,12 +120,12 @@
           </p>
           <div class="stats">
             <article>
-              <strong data-counter="15">0</strong>
+              <strong data-counter="30" data-prefix="+">0</strong>
               <span>Projetos reais</span>
             </article>
             <article>
-              <strong data-counter="4">0</strong>
-              <span>Principais Stacks</span>
+              <strong data-counter="4" data-prefix="+">0</strong>
+              <span>Anos de exp.</span>
             </article>
             <article>
               <strong data-counter="100" data-suffix="%">0</strong>
@@ -205,7 +205,7 @@
         <div class="skill-list" data-reveal>
           <div class="skill-row">
             <span>Backend</span>
-            <strong>Go (Real-time, WebSockets), Python (ETL, Automação)</strong>
+            <strong>Go, Python (ETL, Automação), Node.js</strong>
           </div>
           <div class="skill-row">
             <span>Frontend</span>
@@ -224,12 +224,31 @@
 
       <!-- CONTATO -->
       <section class="contact" id="contato" data-reveal>
-        <p class="eyebrow">Contato</p>
-        <h2>Vamos construir algo direto, bonito e funcional.</h2>
-        <div class="contact-actions">
-          <a class="btn primary magnetic" href="mailto:seuemail@exemplo.com">Enviar e-mail</a>
-          <a class="btn ghost" href="https://github.com/" target="_blank" rel="noreferrer">GitHub</a>
-          <a class="btn ghost" href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn</a>
+        <div class="contact-grid">
+          <div class="contact-info">
+            <h2>Vamos construir algo direto, bonito e funcional.</h2>
+            <div class="contact-actions">
+              <a class="btn primary magnetic" href="mailto:seuemail@exemplo.com">Enviar e-mail</a>
+              <a class="btn ghost" href="https://wa.me/5565992556938" target="_blank" rel="noreferrer">WhatsApp: 65 99255-6938</a>
+              <a class="btn ghost" href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn</a>
+            </div>
+          </div>
+
+          <form class="contact-form" id="contact-form">
+            <div class="form-group">
+              <label for="name">Nome</label>
+              <input type="text" id="name" name="name" placeholder="Seu nome completo" required />
+            </div>
+            <div class="form-group">
+              <label for="phone">Telefone</label>
+              <input type="tel" id="phone" name="phone" placeholder="(00) 00000-0000" required />
+            </div>
+            <div class="form-group">
+              <label for="description">O que você quer construir?</label>
+              <textarea id="description" name="description" placeholder="Descreva brevemente sua ideia..." rows="4" required></textarea>
+            </div>
+            <button type="submit" class="btn primary magnetic w-full">Enviar Proposta</button>
+          </form>
         </div>
       </section>
 

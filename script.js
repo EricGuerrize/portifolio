@@ -1,22 +1,21 @@
-/* ── Lenis smooth scroll ─────────────────────────────── */
+/* ── Smooth scroll (Disabled for Snap) ──────────────── */
+/* 
 const lenis = new Lenis({ lerp: 0.085, smoothWheel: true });
-
-lenis.on('scroll', () => {});
-
 function rafLoop(time) {
   lenis.raf(time);
   requestAnimationFrame(rafLoop);
 }
 requestAnimationFrame(rafLoop);
+*/
 
-// anchor links → lenis
+// anchor links → native smooth
 document.querySelectorAll('a[href^="#"]').forEach(a => {
   a.addEventListener('click', e => {
     const id = a.getAttribute('href');
     const target = document.querySelector(id);
     if (!target) return;
     e.preventDefault();
-    lenis.scrollTo(target, { offset: -80 });
+    target.scrollIntoView({ behavior: 'smooth' });
     mobileNav?.classList.remove('open');
     menuButton?.setAttribute('aria-expanded', 'false');
   });
@@ -124,9 +123,10 @@ function animateCounter(el) {
   function tick(now) {
     const progress = Math.min((now - start) / duration, 1);
     const eased = 1 - Math.pow(1 - progress, 3);
-    el.textContent = Math.round(eased * target) + suffix;
+    const prefix = el.dataset.prefix ?? '';
+    el.textContent = prefix + Math.round(eased * target) + suffix;
     if (progress < 1) requestAnimationFrame(tick);
-    else el.textContent = target + suffix;
+    else el.textContent = prefix + target + suffix;
   }
   requestAnimationFrame(tick);
 }
@@ -197,3 +197,54 @@ menuButton?.addEventListener('click', () => {
   const isOpen = mobileNav.classList.toggle('open');
   menuButton.setAttribute('aria-expanded', String(isOpen));
 });
+/* ── Form Submission ─────────────────────────────────── */
+const contactForm = document.getElementById('contact-form');
+
+if (contactForm) {
+  contactForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const formData = new FormData(contactForm);
+    const data = {
+      name: formData.get('name'),
+      phone: formData.get('phone'),
+      description: formData.get('description'),
+      date: new Date().toISOString()
+    };
+
+    const submitBtn = contactForm.querySelector('button[type="submit"]');
+    const originalText = submitBtn.textContent;
+    
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Enviando...';
+
+    // Mock Firebase saving logic - User should replace with their config
+    console.log('Dados recebidos:', data);
+    
+    setTimeout(() => {
+      submitBtn.textContent = 'Enviado com sucesso!';
+      contactForm.reset();
+      
+      setTimeout(() => {
+        submitBtn.disabled = false;
+        submitBtn.textContent = originalText;
+      }, 3000);
+    }, 1500);
+
+    /* 
+    Para salvar no Firebase, descomente e configure:
+    
+    import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js'
+    import { getFirestore, collection, addDoc } from 'https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js'
+
+    const firebaseConfig = { ... };
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+
+    try {
+      await addDoc(collection(db, "leads"), data);
+    } catch (err) {
+      console.error(err);
+    }
+    */
+  });
+}

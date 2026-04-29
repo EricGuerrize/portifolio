@@ -14,7 +14,10 @@
 
 * { box-sizing: border-box; }
 
-html { scroll-behavior: auto; } /* lenis handles smooth scroll */
+html { 
+  scroll-behavior: auto; 
+  scroll-snap-type: y mandatory;
+} /* lenis handles smooth scroll, but we add snap */
 
 body {
   margin: 0;
@@ -191,10 +194,12 @@ body.cursor-hover .cursor-ring {
 /* ─── HERO ───────────────────────────────── */
 .hero {
   position: relative;
-  min-height: 100svh;
+  min-height: 100vh;
   padding-top: 8rem;
   display: flex;
   flex-direction: column;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
 }
 
 .hero-bg {
@@ -272,8 +277,8 @@ body.cursor-hover .cursor-ring {
 .hero-title {
   margin: 0;
   font-family: "Archivo Black", sans-serif;
-  font-size: clamp(3rem, 8.5vw, 8.5rem);
-  line-height: 0.88;
+  font-size: clamp(2rem, 5.5vw, 6rem);
+  line-height: 0.9;
   letter-spacing: -0.01em;
   text-transform: uppercase;
 }
@@ -424,6 +429,12 @@ body.cursor-hover .cursor-ring {
   width: min(1120px, calc(100% - 2rem));
   margin: 0 auto;
   padding: 7rem 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
 }
 
 .section-kicker {
@@ -649,12 +660,88 @@ body.cursor-hover .cursor-ring {
 .contact {
   width: min(1120px, calc(100% - 2rem));
   margin: 0 auto 1rem;
-  padding: 5rem clamp(1.5rem, 6vw, 5rem);
+  padding: clamp(3rem, 8vw, 6rem) clamp(1.5rem, 6vw, 5rem);
   border: 1px solid var(--line);
-  border-radius: 0.9rem;
+  border-radius: 1.5rem;
   background:
-    radial-gradient(ellipse at 0% 50%, rgba(213, 100, 47, 0.15) 0%, transparent 60%),
-    rgba(244, 240, 232, 0.03);
+    radial-gradient(ellipse at 0% 50%, rgba(213, 100, 47, 0.1) 0%, transparent 60%),
+    rgba(244, 240, 232, 0.02);
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  scroll-snap-align: center;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.contact-info h2 {
+  font-family: "Instrument Serif", serif;
+  font-size: clamp(2.5rem, 4.5vw, 4.5rem);
+  line-height: 1;
+  margin-bottom: 2rem;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 2.5rem;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--line);
+  border-radius: 1rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--acid);
+  opacity: 0.8;
+}
+
+.form-group input,
+.form-group textarea {
+  background: rgba(244, 240, 232, 0.05);
+  border: 1px solid var(--line);
+  border-radius: 0.5rem;
+  padding: 0.85rem 1rem;
+  color: var(--ink);
+  font-family: inherit;
+  font-size: 1rem;
+  transition: border-color 0.3s ease, background 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--acid);
+  background: rgba(244, 240, 232, 0.08);
+}
+
+.w-full { width: 100%; }
+
+@media (max-width: 860px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  .contact-form {
+    padding: 1.5rem;
+  }
 }
 
 .contact-actions {
