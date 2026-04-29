@@ -16,13 +16,8 @@
 
 html { 
   scroll-behavior: auto; 
-} /* lenis handles smooth scroll, snap removed on mobile */
-
-@media (min-width: 769px) {
-  html {
-    scroll-snap-type: y mandatory;
-  }
-}
+  scroll-snap-type: y mandatory;
+} /* lenis handles smooth scroll, snap scroll active */
 
 body {
   margin: 0;
@@ -868,18 +863,18 @@ footer a:hover { color: var(--ink); }
 @media (max-width: 768px) {
   .section {
     padding: 6rem 0;
-    min-height: auto;
-    scroll-snap-align: none;
+    min-height: 100vh;
+    scroll-snap-align: start;
   }
   .contact {
-    padding: 6rem 1.5rem;
-    min-height: auto;
-    scroll-snap-align: none;
+    padding: clamp(3rem, 8vw, 6rem) 1.5rem;
+    min-height: 100vh;
+    scroll-snap-align: start;
   }
   .hero {
     min-height: 100vh;
     padding-top: 7rem;
-    scroll-snap-align: start; /* keep snap only on hero top */
+    scroll-snap-align: start;
   }
   .hero-title {
     font-size: clamp(2.2rem, 10vw, 4rem);
