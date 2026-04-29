@@ -166,6 +166,7 @@ if (imgFollow) {
         imgFollowEl.src = src;
         imgFollow.classList.add('active');
       }
+    });
     item.addEventListener('mouseleave', () => {
       imgFollow.classList.remove('active');
     });
