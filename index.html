@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Portfólio de Eric Guerrize — desenvolvimento web com foco em resultado." />
+    <title>Eric Guerrize | Portfólio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+
+    <div class="cursor" aria-hidden="true"></div>
+    <div class="cursor-ring" aria-hidden="true"></div>
+
+    <div class="project-img-follow" aria-hidden="true">
+      <img src="" alt="" />
+    </div>
+
+    <header class="site-header">
+      <a class="brand" href="#inicio" aria-label="Ir para o início">
+        <span>EG</span>
+        <strong>Portfólio</strong>
+      </a>
+      <nav class="desktop-nav" aria-label="Navegação principal">
+        <a href="#sobre">Sobre</a>
+        <a href="#projetos">Projetos</a>
+        <a href="#habilidades">Skills</a>
+        <a href="#contato">Contato</a>
+      </nav>
+      <button class="menu-button" type="button" aria-label="Abrir menu" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+    </header>
+
+    <nav class="mobile-nav" aria-label="Navegação mobile">
+      <a href="#sobre">Sobre</a>
+      <a href="#projetos">Projetos</a>
+      <a href="#habilidades">Skills</a>
+      <a href="#contato">Contato</a>
+    </nav>
+
+    <main>
+
+      <!-- HERO -->
+      <section class="hero" id="inicio">
+        <div class="hero-bg" aria-hidden="true"></div>
+
+        <div class="hero-layout">
+          <div class="hero-top">
+            <p class="eyebrow hero-eyebrow">Desenvolvedor web</p>
+            <div class="hero-right">
+              <div class="avail-badge">
+                <span class="badge-dot"></span>
+                Disponível para projetos
+              </div>
+            </div>
+          </div>
+
+          <h1 class="hero-title" id="hero-title">
+            Construo experiências digitais com código limpo,
+            <em>interface memorável</em> e foco em resultado.
+          </h1>
+
+          <div class="hero-bottom">
+            <p class="hero-text">
+              Front-end, integrações e produtos web completos — páginas rápidas,
+              responsivas e prontas para uso.
+            </p>
+            <div class="hero-actions">
+              <a class="btn primary magnetic" href="#projetos">Ver projetos</a>
+              <a class="btn ghost" href="#contato">Fale comigo</a>
+            </div>
+            <div class="hero-numbers">
+              <div class="hero-num">
+                <strong data-counter="12">0</strong>
+                <span>projetos entregues</span>
+              </div>
+              <div class="hero-num">
+                <strong data-counter="3">0</strong>
+                <span>anos de experiência</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="ticker" aria-label="Competências">
+          <div class="ticker-track" aria-hidden="true">
+            <span>React</span><span class="dot">✦</span>
+            <span>JavaScript</span><span class="dot">✦</span>
+            <span>TypeScript</span><span class="dot">✦</span>
+            <span>UI Design</span><span class="dot">✦</span>
+            <span>APIs REST</span><span class="dot">✦</span>
+            <span>Node.js</span><span class="dot">✦</span>
+            <span>Performance</span><span class="dot">✦</span>
+            <span>Deploy</span><span class="dot">✦</span>
+            <span>React</span><span class="dot">✦</span>
+            <span>JavaScript</span><span class="dot">✦</span>
+            <span>TypeScript</span><span class="dot">✦</span>
+            <span>UI Design</span><span class="dot">✦</span>
+            <span>APIs REST</span><span class="dot">✦</span>
+            <span>Node.js</span><span class="dot">✦</span>
+            <span>Performance</span><span class="dot">✦</span>
+            <span>Deploy</span><span class="dot">✦</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- SOBRE -->
+      <section class="section split" id="sobre">
+        <div class="section-kicker" data-reveal>Sobre</div>
+        <div class="section-content" data-reveal>
+          <h2>Um portfólio para mostrar trabalho real, não só uma lista de tecnologias.</h2>
+          <p>
+            Organizado para funcionar como cartão de visitas: apresentação direta,
+            projetos com contexto, habilidades legíveis e contato sem atrito.
+          </p>
+          <div class="stats">
+            <article>
+              <strong data-counter="12">0</strong>
+              <span>Projetos entregues</span>
+            </article>
+            <article>
+              <strong data-counter="4">0</strong>
+              <span>Áreas de atuação</span>
+            </article>
+            <article>
+              <strong data-counter="100" data-suffix="%">0</strong>
+              <span>Responsivo</span>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROJETOS -->
+      <section class="section projects" id="projetos">
+        <div class="section-heading" data-reveal>
+          <p class="eyebrow">Projetos selecionados</p>
+          <h2>Trabalhos com presença visual e base técnica sólida.</h2>
+        </div>
+
+        <div class="project-list">
+
+          <a class="project-item" href="#" target="_blank" rel="noreferrer" data-reveal
+             data-img="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80">
+            <div class="pi-left">
+              <span class="pi-num">01</span>
+              <div class="pi-text">
+                <span class="pi-tag">Dashboard</span>
+                <h3>Financeiro Lumiz</h3>
+                <p>Interface para leitura rápida de métricas, filtros e dados operacionais.</p>
+              </div>
+            </div>
+            <span class="pi-arrow">↗</span>
+          </a>
+
+          <a class="project-item" href="#" target="_blank" rel="noreferrer" data-reveal
+             data-img="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80">
+            <div class="pi-left">
+              <span class="pi-num">02</span>
+              <div class="pi-text">
+                <span class="pi-tag">Web app</span>
+                <h3>Semáforo inteligente</h3>
+                <p>Monitoramento em tempo real com streaming, API e painel de status.</p>
+              </div>
+            </div>
+            <span class="pi-arrow">↗</span>
+          </a>
+
+          <a class="project-item" href="#" target="_blank" rel="noreferrer" data-reveal
+             data-img="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80">
+            <div class="pi-left">
+              <span class="pi-num">03</span>
+              <div class="pi-text">
+                <span class="pi-tag">Landing page</span>
+                <h3>Produto digital</h3>
+                <p>Página de conversão com narrativa clara, layout responsivo e animações sutis.</p>
+              </div>
+            </div>
+            <span class="pi-arrow">↗</span>
+          </a>
+
+        </div>
+      </section>
+
+      <!-- HABILIDADES -->
+      <section class="section skills" id="habilidades">
+        <div class="section-kicker" data-reveal>Skills</div>
+        <div class="skill-list" data-reveal>
+          <div class="skill-row">
+            <span>Front-end</span>
+            <strong>HTML, CSS, JavaScript, React</strong>
+          </div>
+          <div class="skill-row">
+            <span>Back-end</span>
+            <strong>APIs, Node, Python, bancos de dados</strong>
+          </div>
+          <div class="skill-row">
+            <span>Produto</span>
+            <strong>UI/UX, prototipagem, acessibilidade</strong>
+          </div>
+          <div class="skill-row">
+            <span>Entrega</span>
+            <strong>Git, testes, deploy, performance</strong>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTATO -->
+      <section class="contact" id="contato" data-reveal>
+        <p class="eyebrow">Contato</p>
+        <h2>Vamos construir algo direto, bonito e funcional.</h2>
+        <div class="contact-actions">
+          <a class="btn primary magnetic" href="mailto:seuemail@exemplo.com">Enviar e-mail</a>
+          <a class="btn ghost" href="https://github.com/" target="_blank" rel="noreferrer">GitHub</a>
+          <a class="btn ghost" href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn</a>
+        </div>
+      </section>
+
+    </main>
+
+    <footer>
+      <span>© 2026 Eric Guerrize</span>
+      <a href="#inicio">Voltar ao topo</a>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
