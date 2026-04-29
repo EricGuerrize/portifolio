@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lumiz — Gestão Clínica | Eric Guerrize</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Archivo+Black&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <style>
+    .project-detail-hero {
+      padding-top: 10rem;
+      padding-bottom: 5rem;
+      text-align: center;
+    }
+    .project-detail-hero h1 {
+      font-family: "Archivo Black", sans-serif;
+      font-size: clamp(2.5rem, 6vw, 5rem);
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+    }
+    .project-meta {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-bottom: 4rem;
+      color: var(--muted);
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      letter-spacing: 0.1em;
+    }
+    .project-meta span { color: var(--acid); }
+    .project-content {
+      max-width: 800px;
+      margin: 0 auto;
+      padding-bottom: 8rem;
+    }
+    .project-content h2 {
+      font-family: "Instrument Serif", serif;
+      font-size: 2.5rem;
+      margin: 3rem 0 1.5rem;
+    }
+    .project-content p {
+      font-size: 1.15rem;
+      line-height: 1.8;
+      color: var(--muted);
+      margin-bottom: 1.5rem;
+    }
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 2rem;
+      color: var(--acid);
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 0.85rem;
+    }
+    .project-image-large {
+      width: 100%;
+      height: 50vh;
+      object-fit: cover;
+      border-radius: 1.5rem;
+      margin-bottom: 4rem;
+      border: 1px solid var(--line);
+    }
+  </style>
+</head>
+<body>
+  <div class="cursor"></div>
+  <div class="cursor-ring"></div>
+
+  <header class="site-header">
+    <a class="brand" href="index.html">
+      <span>EG</span>
+      <strong>Eric Guerrize</strong>
+    </a>
+    <a href="index.html#projetos" class="btn ghost">Voltar aos Projetos</a>
+  </header>
+
+  <main class="section">
+    <div class="project-detail-hero">
+      <a href="index.html#projetos" class="back-link">← Voltar</a>
+      <h1 data-reveal>Lumiz — Gestão Clínica</h1>
+      <div class="project-meta" data-reveal>
+        <div>Stack: <span>React, Supabase, TS</span></div>
+        <div>Ano: <span>2024</span></div>
+      </div>
+      <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80" alt="Lumiz" class="project-image-large" data-reveal>
+    </div>
+
+    <div class="project-content" data-reveal>
+      <h2>O Problema</h2>
+      <p>
+        Clínicas médicas muitas vezes sofrem com sistemas de gestão arcaicos, lentos e pouco intuitivos, o que resulta em atrasos no atendimento, perda de dados e dificuldade no acompanhamento histórico dos pacientes.
+      </p>
+
+      <h2>A Solução</h2>
+      <p>
+        O Lumiz foi desenvolvido para ser uma plataforma centralizada e de alta performance. Implementei um sistema de agendamento em tempo real, gestão de prontuários eletrônicos e integração direta com banco de dados relacional para garantir integridade e velocidade.
+      </p>
+
+      <h2>Como Funciona</h2>
+      <p>
+        Utilizando React no frontend para uma experiência fluida (SPA) e Supabase no backend para autenticação e persistência de dados. O sistema permite que médicos e secretários gerenciem toda a jornada do paciente, desde o primeiro contato até o histórico de consultas e prescrições, tudo em uma interface limpa e moderna.
+      </p>
+    </div>
+  </main>
+
+  <footer>
+    <span>© 2026 Eric Guerrize</span>
+    <a href="index.html#inicio">Início</a>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

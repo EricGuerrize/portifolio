@@ -217,17 +217,27 @@ if (contactForm) {
     submitBtn.disabled = true;
     submitBtn.textContent = 'Enviando...';
 
-    // Mock Firebase saving logic - User should replace with their config
-    console.log('Dados recebidos:', data);
+    // WhatsApp Redirection
+    const ownerNumber = '5565992556938';
+    const message = `Olá! Meu nome é ${data.name}. 
+Estou interessado em um projeto: ${data.description}.
+Meu telefone de contato: ${data.phone}`;
+    
+    const whatsappUrl = `https://wa.me/${ownerNumber}?text=${encodeURIComponent(message)}`;
     
     setTimeout(() => {
-      submitBtn.textContent = 'Enviado com sucesso!';
-      contactForm.reset();
+      submitBtn.textContent = 'Redirecionando...';
       
       setTimeout(() => {
-        submitBtn.disabled = false;
-        submitBtn.textContent = originalText;
-      }, 3000);
+        window.open(whatsappUrl, '_blank');
+        submitBtn.textContent = 'Enviado com sucesso!';
+        contactForm.reset();
+        
+        setTimeout(() => {
+          submitBtn.disabled = false;
+          submitBtn.textContent = originalText;
+        }, 3000);
+      }, 1000);
     }, 1500);
 
     /* 
