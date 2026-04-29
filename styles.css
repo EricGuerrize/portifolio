@@ -16,8 +16,13 @@
 
 html { 
   scroll-behavior: auto; 
-  scroll-snap-type: y mandatory;
-} /* lenis handles smooth scroll, but we add snap */
+} /* lenis handles smooth scroll, snap removed on mobile */
+
+@media (min-width: 769px) {
+  html {
+    scroll-snap-type: y mandatory;
+  }
+}
 
 body {
   margin: 0;
@@ -109,17 +114,24 @@ body.cursor-hover .cursor-ring {
   align-items: center;
   gap: 0.75rem;
   font-weight: 700;
+  color: var(--acid);
 }
 
-.brand span {
+.brand span.brand-name-pill {
   display: grid;
   place-items: center;
-  width: 2.6rem;
+  padding: 0 1.2rem;
   height: 2.6rem;
-  border-radius: 50%;
+  border-radius: 999px;
   background: var(--acid);
   color: #0a0c08;
   font-family: "Archivo Black", sans-serif;
+  font-size: 0.8rem;
+  white-space: nowrap;
+}
+
+.brand strong {
+  color: var(--ink);
 }
 
 .desktop-nav {
@@ -854,6 +866,25 @@ footer a:hover { color: var(--ink); }
   .pi-num { display: none; }
 }
 @media (max-width: 768px) {
+  .section {
+    padding: 6rem 0;
+    min-height: auto;
+    scroll-snap-align: none;
+  }
+  .contact {
+    padding: 6rem 1.5rem;
+    min-height: auto;
+    scroll-snap-align: none;
+  }
+  .hero {
+    min-height: 100vh;
+    padding-top: 7rem;
+    scroll-snap-align: start; /* keep snap only on hero top */
+  }
+  .hero-title {
+    font-size: clamp(2.2rem, 10vw, 4rem);
+    text-align: center;
+  }
   .hero-bottom {
     grid-template-columns: 1fr;
     text-align: center;
@@ -865,7 +896,7 @@ footer a:hover { color: var(--ink); }
     align-items: center;
     flex-direction: row;
     justify-content: center;
-    gap: 3rem;
+    gap: 2rem;
     margin-top: 2rem;
   }
   .hero-num { text-align: center; }
@@ -874,6 +905,13 @@ footer a:hover { color: var(--ink); }
   }
   .hero-text {
     margin: 0 auto;
+  }
+  .contact-form {
+    padding: 1.5rem;
+    gap: 1rem;
+  }
+  .form-group input, .form-group textarea {
+    padding: 0.7rem;
   }
 }
 

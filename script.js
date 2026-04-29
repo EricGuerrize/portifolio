@@ -166,12 +166,26 @@ if (imgFollow) {
         imgFollowEl.src = src;
         imgFollow.classList.add('active');
       }
-    });
     item.addEventListener('mouseleave', () => {
       imgFollow.classList.remove('active');
     });
   });
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+  // Force scroll to top on refresh
+  if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+  }
+  window.scrollTo(0, 0);
+
+  // Split text for hero animation (if not already handled)
+  const heroTitle = document.querySelector('.hero-title');
+  if (heroTitle && !heroTitle.classList.contains('split-done')) {
+    splitWords('.hero-title');
+    heroTitle.classList.add('split-done');
+  }
+});
 
 /* ── Magnetic buttons ────────────────────────────────── */
 document.querySelectorAll('.magnetic').forEach(btn => {
