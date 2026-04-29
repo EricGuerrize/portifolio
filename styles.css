@@ -16,8 +16,8 @@
 
 html { 
   scroll-behavior: auto; 
-  scroll-snap-type: y mandatory;
-} /* lenis handles smooth scroll, snap scroll active */
+  scroll-snap-type: y proximity;
+} /* lenis handles smooth scroll, proximity snap active */
 
 body {
   margin: 0;
@@ -243,6 +243,7 @@ body.cursor-hover .cursor-ring {
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
+  margin-top: 2rem; /* Give space for the floating header logo */
 }
 
 .eyebrow {
@@ -258,15 +259,21 @@ body.cursor-hover .cursor-ring {
   display: inline-flex;
   align-items: center;
   gap: 0.6rem;
-  padding: 0.6rem 1.1rem;
+  padding: 0.5rem 1rem;
   border: 1px solid var(--line);
   border-radius: 999px;
-  background: rgba(18, 23, 19, 0.6);
+  background: rgba(18, 23, 19, 0.4);
   backdrop-filter: blur(12px);
-  font-size: 0.82rem;
+  font-size: 0.78rem;
   color: var(--muted);
   opacity: 0;
   animation: fadeIn 0.6s var(--ease-out) 0.4s forwards;
+  transition: transform 0.3s ease;
+}
+
+.avail-badge:hover {
+  transform: scale(1.02);
+  border-color: var(--acid);
 }
 
 @keyframes fadeIn {
